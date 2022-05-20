@@ -13,7 +13,7 @@ public class HerokudemoApplication {
 	@RequestMapping("/")
 	@ResponseBody
 	String home() {
-		return "<h1>Hello World! </h1>";
+		return "<h1> Hello World!!</h1> ";
 	}
 
 	public static void main(String[] args) {
