@@ -18,10 +18,16 @@ public class HerokudemoApplication {
 	}
 
 	public static void main(String[] args) {
-
-		Dotenv dotenv = Dotenv.configure().load();
+		String myvar = "";
+		try {
+			Dotenv dotenv = Dotenv.configure().load();
+			myvar = dotenv.get("MY_ENV_VAR1");
+		}catch(Exception e){
+			myvar = "no var found";
+			System.out.println(e.toString());
+		}
 		System.out.println("algo esta bien");
-		System.out.println(dotenv.get("MY_ENV_VAR1"));
+		System.out.println(myvar);
 		SpringApplication.run(HerokudemoApplication.class, args);
 	}
 
