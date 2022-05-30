@@ -1,5 +1,6 @@
 package com.example.herokudemo;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,10 @@ public class HerokudemoApplication {
 	}
 
 	public static void main(String[] args) {
+
+		Dotenv dotenv = Dotenv.configure().load();
+		System.out.println("algo esta bien");
+		System.out.println(dotenv.get("MY_ENV_VAR1"));
 		SpringApplication.run(HerokudemoApplication.class, args);
 	}
 
